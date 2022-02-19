@@ -4,41 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/5c7edfd842.js"
-      crossorigin="anonymous"
-    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Ios Calculator</title>
   </head>
   <body>
     <main>
       <section id="screens-wrapper">
-        <div class="screen" id="top-screen"></div>
+        <div class="screen">
+          <span id="top-screen"></span><span id="operand-screen"></span>
+        </div>
         <div class="screen" id="bottom-screen"></div>
       </section>
       <section id="key-container">
-        <div class="key  number zero" id="zero">0</div>
-        <div class="key number one" id="one">1</div>
-        <div class="key number two" id="two">2</div>
-        <div class="key number three" id="three">3</div>
-        <div class="key number four" id="four">4</div>
-        <div class="key number five" id="five">5</div>
-        <div class="key number six" id="six">6</div>
+        <div class="key task AC" id="AC">AC</div>
+        <div class="key task plus-min" id="plus-min">±</div>
+        <div class="key operand percent" id="percent">%</div>
+        <div class="key operand division" id="division">÷</div>
         <div class="key number seven" id="seven">7</div>
         <div class="key number eight" id="eight">8</div>
         <div class="key number nine" id="nine">9</div>
-        <div class="key number dot" id="dot">.</div>
-        <div class="key operand division" id="division">÷</div>
         <div class="key operand multiply" id="multiply">x</div>
+        <div class="key number four" id="four">4</div>
+        <div class="key number five" id="five">5</div>
+        <div class="key number six" id="six">6</div>
         <div class="key operand minus" id="minus">-</div>
+        <div class="key number one" id="one">1</div>
+        <div class="key number two" id="two">2</div>
+        <div class="key number three" id="three">3</div>
         <div class="key operand plus" id="plus">+</div>
-        <div class="key task AC" id="AC">AC</div>
-        <div class="key task plus-min" id="plus-min">±</div>
-        <div class="key task percent" id="percent">%</div>
+        <div class="key number zero" id="zero">0</div>
+        <div class="key number dot" id="dot">.</div>
         <div class="key task equal" id="equal">=</div>
-
       </section>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
