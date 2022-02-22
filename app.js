@@ -6,24 +6,23 @@ const operandScreen = document.getElementById("operand-screen");
 
 // Sonucun virgülle beraber 9 haneyi geçmemesi için yuvarlama veya uyarı fonksiyonu
 
-function roundMax7Digits(num) {
+function roundMax8Digits(num) {
   let str = num.toString();
-  if (str.indexOf(".") > 9 || (!str.includes(".") && str.length > 8)) {
-    bottomScreen.innerHTML = "Too big for screen";
+  if (str.length < 10) {
+    bottomScreen.innerHTML = num;
+  }else if (str.indexOf(".") > 9 || (!str.includes(".") && str.length > 9)) {
+    bottomScreen.innerHTML = "Too big for the screen";
     bottomScreen.style.fontSize = "1rem";
-    bottomScreen.style.color = "red";
+    bottomScreen.style.color = "indianred";
     setTimeout(() => {
       bottomScreen.innerHTML = "";
       bottomScreen.style.fontSize = "1.7rem";
       bottomScreen.style.color = "white";
     }, 1000);
-  } else if (!str.includes(".") && str.length < 9) {
-    bottomScreen.innerHTML = num;
-  } else if (str.indexOf(".") < 8) {
+  }else if (str.indexOf(".") < 8) {
     bottomScreen.innerHTML = num.toFixed(8 - str.indexOf("."));
   }
 }
-
 function operation() {
   let number = 0;
   switch (operandScreen.innerText) {
@@ -43,7 +42,7 @@ function operation() {
       number = (+topScreen.innerText / 100) * +bottomScreen.innerText;
       break;
   }
-  roundMax7Digits(number);
+  roundMax8Digits(number);
   topScreen.innerHTML = "";
   operandScreen.innerHTML = "";
 }
